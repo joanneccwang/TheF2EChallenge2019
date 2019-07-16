@@ -1,7 +1,8 @@
 <template>
   <div class="toggle-button" @click="togglePanel()">
     <icon icon-type="tomato_small_color" :size="25"></icon>
-    <icon icon-type="arrow" :size="20"></icon>
+    <icon icon-type="arrow" :size="20" :style="arrowIconStyle"></icon>
+
   </div>
 </template>
 
@@ -13,6 +14,16 @@ export default {
     ...mapGetters([
       'isPanelShown',
     ]),
+    arrowIconStyle() {
+      if (this.isPanelShown) {
+        return {
+          transform: 'rotate(180deg)',
+        };
+      }
+      return {
+        transform: 'rotate(0deg)',
+      };
+    },
   },
   methods: {
     ...mapMutations([

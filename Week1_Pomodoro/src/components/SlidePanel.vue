@@ -1,11 +1,10 @@
 <template>
   <div class="slide-panel">
     <menu-bar class="menu-bar"></menu-bar>
-    <div v-if="isPanelShown" class="panel"></div>
+    <div class="panel"></div>
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
 import MenuBar from './MenuBar';
 
 
@@ -15,9 +14,6 @@ export default {
   },
 
   computed: {
-    ...mapGetters([
-      'isPanelShown',
-    ]),
   },
 };
 </script>
@@ -27,6 +23,7 @@ $background-color: $color-black;
 $border-color: $color-border;
 
 .slide-panel {
+  width: 0px;
   display: flex;
 }
 
@@ -37,5 +34,6 @@ $border-color: $color-border;
   flex: 1 0 auto;
   background: $background-color;
   border-left: 1px solid $border-color;
+  margin-left: -1px;  // for border
 }
 </style>
