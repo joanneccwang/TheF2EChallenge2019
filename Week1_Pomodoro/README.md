@@ -29,3 +29,15 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 - 有設定 .eslintignore 但 vscode 似乎沒有 ignore 指定的資料夾？（eg. /build/）
 原因是跟用 vscode 開的 working directory 有關，vscode 會讀 working directory root 下的設定，如果 .eslintrc, .eslintignore 是子資料夾的設定，可以用 vscode setting 中 `"eslint.workingDirectories"` 設定
+
+- Vuex mutation 中要更改 state Object 的值會得到 linter 的 `no-param-reassign` warning
+.eslintrc.js 加上 custom rule
+
+``` js
+'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        '_state', // for vuex state
+      ],
+}],
+```

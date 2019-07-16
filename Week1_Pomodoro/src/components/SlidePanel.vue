@@ -1,15 +1,23 @@
 <template>
   <div class="slide-panel">
     <menu-bar class="menu-bar"></menu-bar>
-    <div class="panel"></div>
+    <div v-if="isPanelShown" class="panel"></div>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import MenuBar from './MenuBar';
+
 
 export default {
   components: {
     MenuBar,
+  },
+
+  computed: {
+    ...mapGetters([
+      'isPanelShown',
+    ]),
   },
 };
 </script>

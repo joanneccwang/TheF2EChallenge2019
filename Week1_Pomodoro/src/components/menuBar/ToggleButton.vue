@@ -6,10 +6,25 @@
 </template>
 
 <script>
-export default {
-  methods: {
-    togglePanel() {
+import { mapGetters, mapMutations } from 'vuex';
 
+export default {
+  computed: {
+    ...mapGetters([
+      'isPanelShown',
+    ]),
+  },
+  methods: {
+    ...mapMutations([
+      'closePanel',
+      'showPanel',
+    ]),
+    togglePanel() {
+      if (this.isPanelShown) {
+        this.closePanel();
+      } else {
+        this.showPanel();
+      }
     },
   },
 };
