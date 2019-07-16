@@ -33,6 +33,7 @@ export default {
   @mixin IconType($type) {
     .icon-#{$type} {
       background: url("../../assets/icons/#{$type}.svg") no-repeat center center;
+      background-size: contain;
       width: 100%;
       height: 100%;
     }
