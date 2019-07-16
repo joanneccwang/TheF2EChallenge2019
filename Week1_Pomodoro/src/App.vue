@@ -10,9 +10,9 @@ export default {
 };
 </script>
 
-<style>
-@import './assets/style/reset.css';
-@import './assets/style/main.scss';
+<style lang="scss">
+@import '@/assets/style/reset.scss';
+@import '@/assets/style/main.scss';
 
 #app {
   height: 100%;
