@@ -1,15 +1,24 @@
 <template>
   <div class="menu-bar">
-
+    <toggle-button></toggle-button>
   </div>
 </template>
 <script>
-export default {
+import ToggleButton from './menuBar/ToggleButton';
 
+export default {
+  components: {
+    ToggleButton,
+  },
 };
 </script>
 <style lang="scss" scoped>
+
+$background-color: $color-black;
+
 .menu-bar {
-  border: 1px solid green;
+  background: $background-color;
+
+  position: relative;
 }
 </style>

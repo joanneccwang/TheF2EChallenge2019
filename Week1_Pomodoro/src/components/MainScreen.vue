@@ -9,8 +9,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+$background-color: #EAEAEA;
+
 .main-screen {
-  border: 1px solid orange;
+  background: $background-color;
 }
 </style>
 

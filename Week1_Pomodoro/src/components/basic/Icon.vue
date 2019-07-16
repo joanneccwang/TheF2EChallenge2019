@@ -1,5 +1,5 @@
 <template>
-  <div class="icon">
+  <div class="icon" :style="iconStyle">
     <div :class="`icon-${iconType}`"></div>
   </div>
 </template>
@@ -11,6 +11,20 @@ export default {
       type: String,
       required: true,
     },
+    size: {
+      type: Number,
+      required: false,
+      default: 30,
+    },
+  },
+
+  computed: {
+    iconStyle() {
+      return {
+        width: `${this.size}px`,
+        height: `${this.size}px`,
+      };
+    },
   },
 };
 </script>
@@ -19,15 +33,12 @@ export default {
   @mixin IconType($type) {
     .icon-#{$type} {
       background: url("../../assets/icons/#{$type}.svg") no-repeat center center;
-      background-size: 20px 20px;
       width: 100%;
       height: 100%;
     }
   }
 
   display: inline-block;
-  height: 30px;
-  width: 30px;
 
   @include IconType('tomato_small_color');
   @include IconType('tomato_small_gray');
@@ -39,7 +50,7 @@ export default {
   @include IconType('arrow');
   @include IconType('complete');
   @include IconType('list_red');
-  @include IconType('list_whilte');
+  @include IconType('list_white');
   @include IconType('pause_gray');
   @include IconType('pause_red');
   @include IconType('play_gray');
