@@ -28,13 +28,20 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
       color: $color-white;
+      font-weight: $font-light;
       font-size: 24px;
+      letter-spacing: 5px;
+      line-height: 29px;
     }
   }
   .text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 20px;
   }
 }
 </style>

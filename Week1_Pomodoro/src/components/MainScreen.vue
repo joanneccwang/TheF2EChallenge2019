@@ -38,6 +38,11 @@ $background-color: #EAEAEA;
   color: $color-black;
   justify-content: center;
   text-align: center;
+
+  font-weight: $font-light;
+  letter-spacing: 2px;
+  font-size: 10px;
+  line-height: 12px;
 }
 </style>
 
