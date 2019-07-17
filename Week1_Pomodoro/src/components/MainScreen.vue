@@ -1,13 +1,18 @@
 <template>
   <div class="main-screen">
-    <div class="clock-container">
-    <icon icon-type="tomato_small_color" :size="300"></icon>
+    <div class="main-container">
+      <initial-screen></initial-screen>
     </div>
+    <div class="footer">PODOMORO</div>
   </div>
 </template>
 <script>
-export default {
+import InitialScreen from './mainScreen/InitialScreen';
 
+export default {
+  components: {
+    InitialScreen,
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -16,13 +21,23 @@ $background-color: #EAEAEA;
 .main-screen {
   background: $background-color;
   display: flex;
-
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  padding: 53px 0px;
 }
 
-.clock-container {
+.main-container {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+}
+
+.footer {
+  flex: 0 0 auto;
+  color: $color-black;
+  justify-content: center;
+  text-align: center;
 }
 </style>
 
