@@ -2,7 +2,7 @@ import * as type from './mutations_type';
 
 export const state = {
   isPanelShown: false,
-  temp: undefined,
+  currentPanel: 'addTask',
 };
 
 export const mutations = {
@@ -11,6 +11,10 @@ export const mutations = {
   },
   [type.CLOSE_PANEL]: (_state) => {
     _state.isPanelShown = false;
+  },
+
+  [type.SET_CURRENT_PANEL]: (_state, panel) => {
+    _state.currentPanel = panel;
   },
 };
 

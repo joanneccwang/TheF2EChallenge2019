@@ -22,11 +22,11 @@ export default {
     slideStyle() {
       if (this.isPanelShown) {
         return {
-          flex: '0 0 80px',
+          flex: '1 0 80px',
         };
       }
       return {
-        flex: '1 0 80px',
+        flex: '0 0 80px',
       };
     },
   },

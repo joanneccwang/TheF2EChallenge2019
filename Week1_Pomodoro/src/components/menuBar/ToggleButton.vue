@@ -17,11 +17,11 @@ export default {
     arrowIconStyle() {
       if (this.isPanelShown) {
         return {
-          transform: 'rotate(180deg)',
+          transform: 'rotate(0deg)',
         };
       }
       return {
-        transform: 'rotate(0deg)',
+        transform: 'rotate(180deg)',
       };
     },
   },
