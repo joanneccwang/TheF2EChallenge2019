@@ -1,6 +1,8 @@
 <template>
-  <div class="ringtone-panel">
-    I'm ringtone.
+  <div class="panel-template ringtone-panel">
+    <div class="panel-header">
+      RING TONE
+    </div>
   </div>
 </template>
 <script>

@@ -1,6 +1,20 @@
 <template>
-  <div class="add-task-panel">
-    I'm add task;
+  <div class="panel-template add-task-panel">
+    <div class="panel-header">
+      ADD NEW TASK
+    </div>
+
+    <div>
+      <div class="panel-sub-header">
+        TASK TITLE
+      </div>
+    </div>
+
+    <div>
+      <div class="panel-sub-header">
+        ESTIMATED TOMATO
+      </div>
+    </div>
   </div>
 </template>
 <script>

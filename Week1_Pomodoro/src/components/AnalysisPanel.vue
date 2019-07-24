@@ -1,6 +1,20 @@
 <template>
-  <div class="analysis-panel">
-    I'm analysis.
+  <div class="panel-template analysis-panel">
+    <div class="panel-header">
+      ANALYTICS REPORT
+    </div>
+
+    <div>
+      <div class="panel-sub-header">
+        TOMATO OF THIS WEEK
+      </div>
+    </div>
+
+    <div>
+      <div class="panel-sub-header">
+        CHARTS
+      </div>
+    </div>
   </div>
 </template>
 <script>

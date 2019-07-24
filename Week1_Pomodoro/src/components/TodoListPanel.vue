@@ -1,6 +1,8 @@
 <template>
-  <div class="todo-list-panel">
-    I'm todo list.
+  <div class="panel-template todo-list-panel">
+    <div class="panel-header">
+      TASK LISTS
+    </div>
   </div>
 </template>
 <script>

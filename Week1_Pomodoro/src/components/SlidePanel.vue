@@ -57,7 +57,7 @@ $border-color: $color-border;
 .slide-panel {
   width: 0px;
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .menu-bar {
@@ -67,7 +67,7 @@ $border-color: $color-border;
   flex: 1 0 auto;
   background: $background-color;
   border-left: 1px solid $border-color;
-  margin-left: -1px;  // for border
+  // margin-left: -1px;  // for border
 
 }
 </style>

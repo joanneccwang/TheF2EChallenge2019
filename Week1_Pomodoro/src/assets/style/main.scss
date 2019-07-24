@@ -7,3 +7,32 @@ html body {
   height: 100%;
   font-family: 'Lato';
 }
+
+
+.panel-template {
+  padding: 0px 34px;
+
+  .panel-header {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: $font-black;
+    color: $color-ivory;
+    letter-spacing: 3px;
+
+    padding: 30px 0px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid $color-darkgray;
+  }
+  .panel-block {
+    margin-bottom: 25px; 
+  }
+  .panel-sub-header {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: $font-bold;
+    color: $color-lightgray;
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+  }
+}
