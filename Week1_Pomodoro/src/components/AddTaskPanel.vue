@@ -18,13 +18,17 @@
         <div v-for="index in 10" :key="index" class="tomato-button"
           @mouseover="setHoverIndex(index)" @mouseout="clearHoverIndex()"
           @click="setTomatoCount(index)">
-          <template v-if="index < tomatoCount || (hoverIndex && index <= hoverIndex)">
+          <template v-if="(index <= tomatoCount) || (hoverIndex && index <= hoverIndex)">
             <icon icon-type="tomato_small_color" :size="25"></icon>
           </template>
           <template v-else>
             <icon icon-type="tomato_small_gray" :size="25"></icon>
           </template>
         </div>
+      </div>
+
+      <div class="action-block">
+        <text-button button-type="error">ADD TASK</text-button>
       </div>
     </div>
   </div>
@@ -59,6 +63,9 @@ export default {
     cursor: pointer;
     padding-right: 22px;
   }
+}
 
+.action-block {
+  margin-top: 50px;
 }
 </style>
