@@ -15,20 +15,50 @@
         ESTIMATED TOMATO
       </div>
       <div class="tomato-list">
-        <template v-for="index in 10">
-          <icon icon-type="tomato_small_gray" :key="index" :size="25"></icon>
-        </template>
+        <div v-for="index in 10" :key="index" class="tomato-button"
+          @mouseover="setHoverIndex(index)" @mouseout="clearHoverIndex()"
+          @click="setTomatoCount(index)">
+          <template v-if="index < tomatoCount || (hoverIndex && index <= hoverIndex)">
+            <icon icon-type="tomato_small_color" :size="25"></icon>
+          </template>
+          <template v-else>
+            <icon icon-type="tomato_small_gray" :size="25"></icon>
+          </template>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      hoverIndex: undefined,
+      tomatoCount: 1,
+    };
+  },
 
+  methods: {
+    setHoverIndex(index) {
+      this.hoverIndex = index;
+    },
+    clearHoverIndex() {
+      this.hoverIndex = undefined;
+    },
+
+    setTomatoCount(index) {
+      this.tomatoCount = index + 1;
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
 .tomato-list {
-  margin-right: 25px;
+  display: flex;
+  .tomato-button {
+    cursor: pointer;
+    padding-right: 22px;
+  }
+
 }
 </style>
