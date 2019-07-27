@@ -61,7 +61,9 @@ export default {
   display: flex;
   .tomato-button {
     cursor: pointer;
-    padding-right: 22px;
+    &:not(:last-child) {
+      padding-right: 22px;
+    }
   }
 }
 

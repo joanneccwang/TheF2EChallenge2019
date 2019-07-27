@@ -22,11 +22,13 @@ export default {
     slideStyle() {
       if (this.isPanelShown) {
         return {
-          flex: '1 0 80px',
+          flex: '0 0 auto',
+          width: '598px',
         };
       }
       return {
         flex: '0 0 80px',
+        width: '80px',
       };
     },
   },
@@ -41,8 +43,8 @@ export default {
     flex: 1 0 0px;
   }
   #layout-panel {
-    flex: 0 0 80px;
-    transition: flex .5s ease-in-out;
+    flex: 0 0 auto;
+    transition: all .5s ease-in-out;
   }
 }
 </style>
