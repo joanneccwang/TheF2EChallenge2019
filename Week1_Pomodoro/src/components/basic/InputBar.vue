@@ -1,11 +1,15 @@
 <template>
   <div class="input-bar">
-    <input type="text" :placeholder="placeholder" :style="inputStyle"/>
+    <input type="text" v-model="inputVal" :placeholder="placeholder" :style="inputStyle"/>
   </div>
 </template>
 <script>
 export default {
   props: {
+    value: {
+      type: String,
+      default: '',
+    },
     placeholder: {
       type: String,
       default: '',
@@ -15,7 +19,11 @@ export default {
       default: false,
     },
   },
-
+  data() {
+    return {
+      inputVal: '',
+    };
+  },
   computed: {
     inputStyle() {
       const style = {};
@@ -25,6 +33,16 @@ export default {
 
       return style;
     },
+  },
+
+  watch: {
+    inputVal() {
+      this.$emit('input', this.inputVal);
+    },
+  },
+
+  mounted() {
+    this.inputVal = this.value;
   },
 };
 </script>

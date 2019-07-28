@@ -1,5 +1,5 @@
 <template>
-  <div class="text-button" :class="buttonType">
+  <div class="text-button" :class="buttonType" @click="click">
     <slot></slot>
   </div>
 </template>
@@ -10,6 +10,12 @@ export default {
       type: String,
       validator: type => ['error', 'normal'].indexOf(type) !== -1,
       default: 'normal',
+    },
+  },
+
+  methods: {
+    click($event) {
+      this.$emit('click', $event);
     },
   },
 };
