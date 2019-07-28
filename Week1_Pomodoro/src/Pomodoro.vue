@@ -1,17 +1,20 @@
 <template>
   <div id="pomodoro">
     <main-screen id="layout-main"></main-screen>
+    <menu-bar id="layout-menu"></menu-bar>
     <slide-panel id="layout-panel" :style="slideStyle"></slide-panel>
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex';
 import MainScreen from '@/components/MainScreen';
+import MenuBar from '@/components/MenuBar';
 import SlidePanel from '@/components/SlidePanel';
 
 export default {
   components: {
     MainScreen,
+    MenuBar,
     SlidePanel,
   },
 
@@ -22,13 +25,11 @@ export default {
     slideStyle() {
       if (this.isPanelShown) {
         return {
-          flex: '0 0 auto',
-          width: '598px',
+          width: '518px',
         };
       }
       return {
-        flex: '0 0 80px',
-        width: '80px',
+        width: '0px',
       };
     },
   },
@@ -38,13 +39,18 @@ export default {
 #pomodoro {
   height: 100%;
   display: flex;
+  overflow: hidden;
 
   #layout-main {
     flex: 1 0 0px;
   }
+
+  #layout-menu {
+    flex: 0 0 80px;
+  }
   #layout-panel {
     flex: 0 0 auto;
-    transition: all .5s ease-in-out;
+    transition: width .5s ease-in-out;
   }
 }
 </style>

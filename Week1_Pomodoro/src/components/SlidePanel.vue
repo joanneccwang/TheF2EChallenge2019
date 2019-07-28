@@ -1,6 +1,5 @@
 <template>
   <div class="slide-panel">
-    <menu-bar class="menu-bar"></menu-bar>
     <div class="panel">
       <component :is="panelComponent"></component>
     </div>
@@ -9,7 +8,6 @@
 <script>
 import { mapGetters } from 'vuex';
 import PanelType from '@/mixins/panelType';
-import MenuBar from './MenuBar';
 import AddTaskPanel from './AddTaskPanel';
 import TodoListPanel from './TodoListPanel';
 import AnalysisPanel from './AnalysisPanel';
@@ -17,10 +15,6 @@ import RingtonePanel from './RingtonePanel';
 
 export default {
   mixins: [PanelType],
-
-  components: {
-    MenuBar,
-  },
 
   data() {
     return {
@@ -59,9 +53,6 @@ $border-color: $color-border;
   display: flex;
 }
 
-.menu-bar {
-  flex: 0 0 80px;
-}
 .panel {
   flex: 1 0 auto;
   background: $background-color;
