@@ -3,6 +3,10 @@ import * as type from './mutations_type';
 export const state = {
   isPanelShown: false,
   currentPanel: 'addTask',
+
+
+  /** Tasks */
+  todoTasks: [],
 };
 
 export const mutations = {
@@ -15,6 +19,10 @@ export const mutations = {
 
   [type.SET_CURRENT_PANEL]: (_state, panel) => {
     _state.currentPanel = panel;
+  },
+
+  [type.ADD_TASK]: (_state, task) => {
+    _state.todoTasks.push(task);
   },
 };
 

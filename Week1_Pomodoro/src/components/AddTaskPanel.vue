@@ -9,7 +9,9 @@
         TASK TITLE
       </div>
       <div>
-        <input-bar placeholder="Task Title" fill></input-bar>
+        <input-bar :value="taskName" placeholder="Task Title" fill
+          @input="(name) => taskName = name">
+        </input-bar>
       </div>
     </div>
 
@@ -31,21 +33,32 @@
       </div>
 
       <div class="action-block">
-        <text-button button-type="error">ADD TASK</text-button>
+        <text-button button-type="error" @click="addNewTask()">ADD TASK</text-button>
       </div>
     </div>
   </div>
 </template>
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   data() {
     return {
       hoverIndex: undefined,
       tomatoCount: 1,
+
+      taskName: '',
     };
   },
-
+  computed: {
+    ...mapGetters([
+      'todoTasks',
+    ]),
+  },
   methods: {
+    ...mapMutations([
+      'addTask',
+    ]),
     setHoverIndex(index) {
       this.hoverIndex = index;
     },
@@ -55,6 +68,14 @@ export default {
 
     setTomatoCount(index) {
       this.tomatoCount = index;
+    },
+
+    addNewTask() {
+      const newTask = {
+        name: this.taskName,
+        tomatoes: this.tomatoCount,
+      };
+      this.addTask(newTask);
     },
   },
 };
