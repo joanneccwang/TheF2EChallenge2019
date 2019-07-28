@@ -51,7 +51,7 @@ export default {
     },
 
     setTomatoCount(index) {
-      this.tomatoCount = index + 1;
+      this.tomatoCount = index;
     },
   },
 };
