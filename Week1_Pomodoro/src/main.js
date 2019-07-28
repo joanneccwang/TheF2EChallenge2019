@@ -5,6 +5,7 @@ import Vue from 'vue';
 // Custom General Components
 import Icon from '@/components/basic/Icon';
 import TextButton from '@/components/basic/TextButton';
+import InputBar from '@/components/basic/InputBar';
 
 import App from './App';
 import router from './router';
@@ -14,6 +15,7 @@ Vue.config.productionTip = false;
 
 Vue.component('icon', Icon);
 Vue.component('text-button', TextButton);
+Vue.component('input-bar', InputBar);
 
 /* eslint-disable no-new */
 new Vue({

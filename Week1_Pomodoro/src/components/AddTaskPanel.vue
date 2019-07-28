@@ -8,6 +8,9 @@
       <div class="panel-sub-header">
         TASK TITLE
       </div>
+      <div>
+        <input-bar placeholder="Task Title" fill></input-bar>
+      </div>
     </div>
 
     <div class="panel-block">
