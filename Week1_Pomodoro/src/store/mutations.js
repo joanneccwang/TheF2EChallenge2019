@@ -6,7 +6,13 @@ export const state = {
 
 
   /** Tasks */
-  todoTasks: [],
+  todoTasks: [{
+    name: 'My First Task',
+    tomatoes: 3,
+  }, {
+    name: 'My Second Task',
+    tomatoes: 2,
+  }],
 };
 
 export const mutations = {
