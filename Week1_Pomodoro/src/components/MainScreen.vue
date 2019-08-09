@@ -1,17 +1,32 @@
 <template>
   <div class="main-screen">
     <div class="main-container">
-      <initial-screen></initial-screen>
+      <template v-if="todoTasks.length === 0">
+        <initial-screen></initial-screen>
+      </template>
+      <template v-else>
+        <clock-task></clock-task>
+      </template>
+
     </div>
     <div class="footer">PODOMORO</div>
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import InitialScreen from './mainScreen/InitialScreen';
+import ClockTask from './mainScreen/ClockTask';
 
 export default {
   components: {
     InitialScreen,
+    ClockTask,
+  },
+
+  computed: {
+    ...mapGetters([
+      'todoTasks',
+    ]),
   },
 };
 </script>

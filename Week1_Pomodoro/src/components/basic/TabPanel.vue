@@ -90,7 +90,6 @@ $active-color: $color-white;
 .tab-content {
   flex: 1;
   height: 100%;
-
-  // TODO: Add overflow scroll;
+  overflow-y: scroll;
 }
 </style>

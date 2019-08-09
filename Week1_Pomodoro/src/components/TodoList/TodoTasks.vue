@@ -1,6 +1,8 @@
 <template>
   <div class="todo-tasks">
-    <task-item v-for="(task, idx) in todoTasks" :key="idx"></task-item>
+    <task-item v-for="(task) in todoTasks" :key="task.id"
+      :task="task" :ongoing="task.id === ongoingTask.id">
+    </task-item>
   </div>
 </template>
 <script>
@@ -15,6 +17,7 @@ export default {
   computed: {
     ...mapGetters([
       'todoTasks',
+      'ongoingTask',
     ]),
   },
 

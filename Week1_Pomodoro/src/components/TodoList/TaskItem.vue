@@ -1,14 +1,14 @@
 <template>
   <div class="task-item">
     <div class="icon-block">
-      <icon icon-type="tomato_small_color" :size="13"></icon>
+      <icon v-if="ongoing" icon-type="tomato_small_color" :size="13"></icon>
     </div>
     <div class="task-info">
       <div class="task-name">
-        {{ taskName }}
+        {{ task.name }}
       </div>
       <div class="task-tomatoes">
-        <div v-for="cnt in tomatoes" class="tomato-circle" :key="cnt"></div>
+        <div v-for="cnt in task.tomatoes" class="tomato-circle" :key="cnt"></div>
       </div>
     </div>
 
@@ -18,12 +18,21 @@
 <script>
 
 export default {
-  data() {
-    return {
-      taskName: 'My first task',
-      tomatoes: 4,
-      onGoing: false,
-    };
+  props: {
+    task: {
+      type: Object,
+      default() {
+        return {
+          name: '',
+          tomatoes: 0,
+        };
+      },
+      required: true,
+    },
+    ongoing: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>

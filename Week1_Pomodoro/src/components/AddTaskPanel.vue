@@ -39,7 +39,7 @@
   </div>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 export default {
   data() {
@@ -57,6 +57,9 @@ export default {
   },
   methods: {
     ...mapMutations([
+      'setOngoingTask',
+    ]),
+    ...mapActions([
       'addTask',
     ]),
     setHoverIndex(index) {
@@ -75,7 +78,11 @@ export default {
         name: this.taskName,
         tomatoes: this.tomatoCount,
       };
-      this.addTask(newTask);
+      this.addTask(newTask)
+        .then(() => {
+          this.taskName = '';
+          this.tomatoCount = 1;
+        });
     },
   },
 };
